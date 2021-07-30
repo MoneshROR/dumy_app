@@ -1,0 +1,42 @@
+<%= form_with model: teacher do |form| %>
+    
+    <div>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+      <% teacher.errors.full_messages_for(:name).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+    <br>
+
+    <div>
+      <%= form.label :age %><br>
+      <%= form.text_field :age %><br>
+      <% teacher.errors.full_messages_for(:age).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+    <br>
+
+    <div>
+      <%= form.label :gender %><br>
+      <%= form.text_field :gender %><br>
+      <% teacher.errors.full_messages_for(:gender).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+    <br>
+
+    <div>
+      <%= form.label :address %><br>
+      <%= form.text_area :address %><br>
+      <% teacher.errors.full_messages_for(:address).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+    <br>
+
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>

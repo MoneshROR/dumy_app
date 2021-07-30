@@ -1,0 +1,11 @@
+<h1>Principles</h1>
+
+<ul>
+  <% @principles.each do |principle| %>
+    <li>
+      <%= link_to principle.name, principle%> 
+    </li>
+<% end %>
+</ul>
+
+<%= link_to "Add New Principle", new_principle_path %>

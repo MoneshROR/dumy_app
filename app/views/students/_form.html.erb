@@ -1,0 +1,48 @@
+<%= form_with model: student do |form| %>
+  <ul>
+      <% student.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+  </ul>
+
+    <div>
+      <%= form.label :firstname %><br>
+      <%= form.text_field :firstname %>
+
+    </div>
+  
+    <br></br>
+    <div>
+      <%= form.label :lastname %><br>
+      <%= form.text_field :lastname %><br>
+    
+    </div>
+             
+    <div>
+      <%= form.label :fathername %><br>
+      <%= form.text_field :fathername %><br>
+      
+    
+    </div>
+
+    <div>
+      <%= form.label :address %><br>
+      <%= form.text_area :address %><br>      
+  
+    </div>
+
+    <div>   
+      
+    <%= form.label :gender %>
+    <%= form.radio_button(:gender, "male") %>
+    <%= label_tag(:age_child, "Male") %>
+    <%= form.radio_button(:gender, "female") %>
+    <%= label_tag(:age_adult, "female") %>
+    <br><br>
+
+    </div>
+    
+    <div>
+      <%= form.submit %>
+    </div>
+<% end %>

@@ -1,0 +1,15 @@
+<h1><%= @principle.name %></h1>
+
+<p><%= @principle.age%></p>
+
+<p><%= @principle.gender%></p>
+
+<p><%= @principle.address%></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_principle_path(@principle) %></li>
+  <li><%= link_to "Destroy", principle_path(@principle),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+</ul>
+

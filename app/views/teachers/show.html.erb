@@ -1,0 +1,14 @@
+<h1><%= @teacher.name %></h1>
+
+<p><%= @teacher.age%></p>
+
+<p><%= @teacher.gender%></p>
+
+<p><%= @teacher.address%></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_teacher_path(@teacher) %></li>
+  <li><%= link_to "Destroy", teacher_path(@teacher),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+</ul>

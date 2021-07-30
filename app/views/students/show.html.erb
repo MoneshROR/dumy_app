@@ -1,0 +1,42 @@
+<h1><%= @student.firstname %></h1>
+
+<p><%= @student.lastname%></p>
+
+<p><%= @student.fathername%></p>
+
+<p><%= @student.address%></p>
+
+<p><%= @student.gender%></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_student_path(@student) %></li>
+  <li><%= link_to "Destroy", student_path(@student),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+</ul>
+
+
+
+<br>
+
+<h2>Names</h2>
+<% @student.studentclasses.each do |tudentname| %>
+  <p>
+    <strong>Name:</strong>
+    <%= tudentname.name %>
+  </p>
+
+  
+<% end %>
+
+<h2>Add Student name:</h2>
+<%= form_with model: [ @student, @student.studentclasses.build ] do |form| %>    
+  <p>
+    <%= form.label :Name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>  
+<% end %>
+ 
